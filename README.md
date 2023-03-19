@@ -1,2 +1,2 @@
 # grpc-java
-grpc-Java- An Rpc Library and framework
+grpc-Java- Grpc demo in Action
