@@ -1,0 +1,28 @@
+syntax = "proto3";
+option java_multiple_files = true;
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+package com.grpc;
+
+message BookRequest {
+  int64 id = 1;
+  string name = 2;
+  string publish_year = 3;
+  string author = 4;
+  bool available = 5;
+}
+
+
+message BookResponse {
+  int64 id = 1;
+  string name = 2;
+  string publish_year = 3;
+  string author = 4;
+  bool available = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
+
+service BookService {
+  rpc create(BookRequest) returns (BookResponse);
+  rpc getBooks(google.protobuf.Empty) returns (BookResponse){};
+}
